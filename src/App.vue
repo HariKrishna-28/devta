@@ -1,13 +1,18 @@
 <script setup>
+import { NavBar } from './components'
 </script>
 
 <template>
-  <div class="d-flex flex-col justify-content-center min-vh-100 align-items-center ">
-    <h1 class="text-muted">
-      Hello world!
-      Hi I am Vaibhav.
-      <button @click="count++">{{ count }}</button>
-    </h1>
+  <!-- topbar -->
+  <header>
+    <NavBar />
+  </header>
+  <div class="d-flex flex-lg-row flex-sm-column">
+    <div class="d-flex w-100 min-vh-100">
+      <div class="w-50 bg-primary">1</div>
+      <div class="w-50 bg-secondary">2</div>
+    </div>
+    <div class="w-50 bg-danger">3</div>
   </div>
 </template>
 

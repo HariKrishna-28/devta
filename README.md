@@ -50,7 +50,7 @@ npm install -g vite
 
 ## Getting started
 
-### 1.Clone the project
+### 1. Clone the project
 
 Open your terminal or command prompt and run the following command to clone the repository:
 
