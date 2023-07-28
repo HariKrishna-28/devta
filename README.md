@@ -55,7 +55,7 @@ npm install -g vite
 Open your terminal or command prompt and run the following command to clone the repository:
 
 ```bash
- https://github.com/techrail/devta.git
+ git clone https://github.com/techrail/devta.git
 ```
 
 ### 2. Go to the project directory
