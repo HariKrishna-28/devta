@@ -12,7 +12,7 @@ export const copyToClipboard = async (value) => {
   }
 };
 
-// unix to GMT
+// converts unix to greenwich mean time and locale time
 export const unixToDate = (epoch) => {
   const date = new Date(epoch * 1000);
   const gmt = date.toGMTString();
@@ -20,6 +20,7 @@ export const unixToDate = (epoch) => {
   return { gmt, loc };
 };
 
+// Current date to greenwich mean time and locale time
 export const getCurrentDate = () => {
   const date = new Date();
   const gmt = date.toGMTString();
@@ -27,6 +28,7 @@ export const getCurrentDate = () => {
   return { gmt, loc };
 };
 
+// date to unix
 export const dateToUnixTimestamp = (dateString) => {
   const dateObj = new Date(dateString);
   const unixTimestamp = dateObj.getTime();
@@ -34,8 +36,10 @@ export const dateToUnixTimestamp = (dateString) => {
   return unixTimestampInSeconds;
 };
 
+// relative time (1 day ago, 3 months ago)
 export const getRelativeTime = (date) => moment(date * 1000).fromNow();
 
+// date formatter
 export const formatDates = (date) => {
   const d = date * 1000;
   const data = {
