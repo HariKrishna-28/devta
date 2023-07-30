@@ -1,5 +1,5 @@
-// epoch time
-export const getEpochTime = () => Math.floor(Date.now() / 1000);
+// unix time
+export const getUnixTime = () => Math.floor(Date.now() / 1000);
 
 // copy to clipboard
 export const copyToClipboard = async (value) => {
@@ -10,10 +10,17 @@ export const copyToClipboard = async (value) => {
   }
 };
 
-// epoch to GMT
-export const epochToGMT = (epoch) => {
+// unix to GMT
+export const unixToDate = (epoch) => {
   const date = new Date(epoch * 1000);
   const gmt = date.toGMTString();
   const loc = date.toLocaleString();
   return { gmt, loc };
+};
+
+export const dateToUnix = (d) => {
+  const date = new Date(d);
+  const timeInMillisecond = date.getTime();
+  const unixTimestamp = Math.floor(date.getTime() / 1000);
+  return unixTimestamp;
 };

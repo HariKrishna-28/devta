@@ -8,6 +8,16 @@ const props = defineProps([
     <div class="m-0">
         <CurrentTimestamp />
     </div>
+    <!-- Unix to date converter -->
+    <div class="card">
+        <div class="card-body">
+            Local Time : {{ dateLoc }}
+        </div>
+        <div class="card-body">
+            Local GMT : {{ dateGmt }}
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-body">
             Local Time : {{ dateLoc }}
