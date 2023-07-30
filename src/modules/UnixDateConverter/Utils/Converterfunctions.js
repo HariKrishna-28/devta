@@ -18,9 +18,16 @@ export const unixToDate = (epoch) => {
   return { gmt, loc };
 };
 
-export const dateToUnix = (d) => {
-  const date = new Date(d);
-  const timeInMillisecond = date.getTime();
-  const unixTimestamp = Math.floor(date.getTime() / 1000);
-  return unixTimestamp;
+export const getCurrentDate = () => {
+  const date = new Date();
+  const gmt = date.toGMTString();
+  const loc = date.toLocaleString();
+  return { gmt, loc };
+};
+
+export const dateToUnixTimestamp = (dateString) => {
+  const dateObj = new Date(dateString);
+  const unixTimestamp = dateObj.getTime();
+  const unixTimestampInSeconds = Math.floor(unixTimestamp / 1000);
+  return unixTimestampInSeconds;
 };
