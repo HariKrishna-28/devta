@@ -2,18 +2,23 @@
 import { ref } from 'vue'
 import LeftCard from './Components/LeftCard.vue';
 import RightCard from './Components/RightCard.vue';
-import { dateToUnixTimestamp, unixToDate } from './Utils/Converterfunctions'
+import { dateToUnixTimestamp, formatDates, getRelativeTime, unixToDate } from './Utils/Converterfunctions'
 
 const unix = ref()
 const GMT = ref()
 const LocalT = ref()
 const dtoUnix = ref()
+const relativeTime = ref()
+const dates = ref()
 
 const handleChange = (value) => {
     unix.value = value
     const { gmt, loc } = unixToDate(value)
     GMT.value = gmt
     LocalT.value = loc
+    relativeTime.value = getRelativeTime(value)
+    dates.value = formatDates(value)
+    console.log(dates.value)
 }
 
 const handleDateChange = (value) => {
@@ -40,8 +45,10 @@ const handleDateChange = (value) => {
                     @handle-change="(name) => handleChange(name)" />
             </div>
             <div class="w-50 p-1 rounded border">
-                <RightCard :unix="unix" :date-loc="LocalT" :date-gmt="GMT" :date-to-unix="dtoUnix" />
+                <RightCard :unix="unix" :date-loc="LocalT" :date-gmt="GMT" :date-to-unix="dtoUnix"
+                    :rel-time="relativeTime" />
             </div>
+
         </div>
     </div>
 </template>

@@ -25,10 +25,6 @@ const handleClick = async () => {
             <strong class="p-2 rounded bg-light">
                 {{ epochTime }}
             </strong>
-            <copyIcon />
-            <button type="button" @click="handleClick" class="btn btn-primary">
-                Copy
-            </button>
         </div>
 
         <div class="align-items-center gap-2">
