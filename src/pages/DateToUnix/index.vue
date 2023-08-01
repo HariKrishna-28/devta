@@ -41,15 +41,21 @@ const handleClick = (value) => {
                         Unix to date converter
                     </strong>
                 </h2>
-                <p class="muted">Enter a date or choose from the datepicker below</p>
+                <p class="muted">Enter a valid Date format or choose from the datepicker below</p>
                 <div class="p-2">
                     <input v-model="date" type="text" class="form-control mb-2" placeholder="Enter Date">
+                    <div class="text-muted w-100 text-center mt-1 mb-1">or</div>
                     <VueDatePicker v-model="date"></VueDatePicker>
                 </div>
             </div>
         </div>
         <div class="block card block2 overflow-auto">
             <div v-if="date" class="mt-3">
+                <div class="p-1">
+                    <div role="button" @click="handleClick(unix)" class="card p-1 flex flex-row">
+                        <strong> UNIX </strong> : {{ unix }}
+                    </div>
+                </div>
                 <div v-for="(value, key) in formatteddates" class="p-1 d-flex flex-column gap-2" :key="key">
                     <div role="button" @click="handleClick(value)" class="card p-1 flex flex-row">
                         <strong> {{ labelFormatter(key) }} </strong> : {{ value }}
