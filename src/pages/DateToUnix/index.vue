@@ -1,7 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { dateToUnixTimestamp, formatDates, labelFormatter } from '../../components/utils/UnixDateTimeFunctions';
-import DateTimeConstants from '../../components/DateTimeConstants/DateTimeConstants.vue';
 import { copyToClipboard } from '../../components/utils/UnixDateTimeFunctions';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
@@ -22,6 +21,7 @@ watch(date, (newDate, oldDate) => {
         }
     }
 })
+
 
 const getFormatteddates = (date) => formatteddates.value = formatDates(date)
 
