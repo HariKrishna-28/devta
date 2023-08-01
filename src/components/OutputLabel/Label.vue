@@ -13,7 +13,7 @@ const handleClick = (value) => {
 
 
 <template>
-    <div role="button" @click="handleClick(value)" class="card p-1 flex flex-row">
+    <div role="button" @click="handleClick(value)" class=" card p-1 flex flex-row">
         <strong> {{ labelFormatter(key) }} </strong> : {{ value }}
     </div>
 </template>
