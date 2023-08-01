@@ -24,7 +24,7 @@ const handleClick = (value) => {
             <div class="p-3">
                 <h2>
                     <strong>
-                        Unix to date converter
+                        Unix to Date converter
                     </strong>
                 </h2>
                 <input v-model="unix" @input="handleChange" type="text" class="form-control"
