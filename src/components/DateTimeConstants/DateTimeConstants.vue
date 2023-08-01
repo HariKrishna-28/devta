@@ -3,17 +3,17 @@ import { ref } from 'vue'
 import { getCurrentDate, getUnixTime } from '../utils/UnixDateTimeFunctions';
 
 const epochTime = ref(getUnixTime())
-const { loc, gmt } = getCurrentDate()
-const localeTime = ref(loc)
-const gmTime = ref(gmt)
+const data = getCurrentDate()
+const localeTime = ref(data.loc)
+const gmTime = ref(data.gmt)
 
 
 // Update the unix every single second
 setInterval(() => {
     epochTime.value = getUnixTime()
-    const { loc, gmt } = getCurrentDate()
-    localeTime.value = ref(loc)
-    gmTime.value = ref(gmt)
+    const data = getCurrentDate()
+    localeTime.value = ref(data.loc)
+    gmTime.value = ref(data.gmt)
 }, [1000])
 
 </script>

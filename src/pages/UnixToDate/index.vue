@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import { formatDates } from '../../components/utils/UnixDateTimeFunctions';
+import { formatDates, labelFormatter } from '../../components/utils/UnixDateTimeFunctions';
 import DateTimeConstants from '../../components/DateTimeConstants/DateTimeConstants.vue';
+import { copyToClipboard } from '../../components/utils/UnixDateTimeFunctions';
 
 const unix = ref()
 const data = ref()
@@ -10,11 +11,15 @@ const handleChange = () => {
     data.value = formatDates(unix.value)
 }
 
+const handleClick = (value) => {
+    copyToClipboard(value)
+}
+
 
 </script>
 
 <template>
-    <div class="grid">
+    <div class="grid bg-light">
         <div class="block card block1">
             <div class="p-3">
                 <h2>
@@ -30,10 +35,12 @@ const handleChange = () => {
                 </div>
             </div>
         </div>
-        <div class="block card block2">
+        <div class="block bg-light block2">
             <div v-if="unix">
                 <div v-for="(value, key) in data" class="p-1 d-flex flex-column gap-2" :key="key">
-                    {{ key }} : {{ value }}
+                    <div role="button" @click="handleClick(value)" class="card p-1 flex flex-row">
+                        <strong> {{ labelFormatter(key) }} </strong> : {{ value }}
+                    </div>
                 </div>
             </div>
         </div>
