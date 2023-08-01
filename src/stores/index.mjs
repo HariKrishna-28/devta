@@ -24,6 +24,11 @@ const routes = {
     dir: "UnixToDate",
     icon: "image",
   },
+  dateToUnix: {
+    name: "Date to unix",
+    dir: "DateToUnix",
+    icon: "image",
+  },
 };
 
 export const useGlobalStore = defineStore("global", {
