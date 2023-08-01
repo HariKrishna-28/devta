@@ -28,7 +28,9 @@ const handleChange = () => {
         </div>
         <div class="block card block2">
             <div v-if="unix">
-
+                <div v-for="(value, key) in data" class="p-1 d-flex flex-column gap-2" :key="key">
+                    {{ value }} : {{ key }}
+                </div>
             </div>
         </div>
     </div>
