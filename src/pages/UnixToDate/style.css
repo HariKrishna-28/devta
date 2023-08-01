@@ -4,10 +4,11 @@
   min-height: 100%;
   width: 100%;
   padding: 10px;
+  gap: 10px;
 }
 
 .block {
-  height: 90vh;
+  height: 95vh;
 }
 
 .block1 {

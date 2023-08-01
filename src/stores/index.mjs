@@ -19,6 +19,11 @@ const routes = {
     dir: "Reflect", // page dir inside pages
     icon: "image",
   },
+  unixToDate: {
+    name: "Unix to Date",
+    dir: "UnixToDate",
+    icon: "image",
+  },
 };
 
 export const useGlobalStore = defineStore("global", {
