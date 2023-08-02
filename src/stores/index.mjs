@@ -29,6 +29,11 @@ const routes = {
     dir: "DateToUnix",
     icon: "image",
   },
+  timeZoneConverter: {
+    name: "Time zone converter",
+    dir: "TimeZoneConverter",
+    icon: "image",
+  },
 };
 
 export const useGlobalStore = defineStore("global", {
